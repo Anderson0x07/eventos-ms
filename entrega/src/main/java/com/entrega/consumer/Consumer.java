@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 public class Consumer {
 
     @RabbitListener(queues = { "${sacavix.queue.name}" })
-    public void receive(@Payload String cliente) {
+    public void receive(@Payload String envio) {
 
-        log.info("Received message {}", cliente);
+        log.info("Received message {}", envio);
 
     }
 

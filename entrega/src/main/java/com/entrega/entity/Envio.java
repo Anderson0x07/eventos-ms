@@ -7,16 +7,16 @@ import java.io.Serializable;
 
 @Entity
 @Data
-@Table(name = "cliente")
-public class Cliente implements Serializable {
+@Table(name = "envio")
+public class Envio implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "nombre", nullable = false)
-    private String nombre;
+    @Column(name = "clienteId", nullable = false)
+    private Long clienteId;
 
-    @Column(name = "email", nullable = false)
-    private String email;
+    @Column(name = "contenido", nullable = false)
+    private String contenido;
 }

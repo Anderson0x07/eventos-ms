@@ -1,7 +1,7 @@
-package com.email.controller;
+package com.entrega.controller;
 
-import com.email.entity.Cliente;
-import com.email.service.ClienteService;
+import com.entrega.entity.Envio;
+import com.entrega.service.EnvioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,14 +10,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ClienteController {
+public class EnvioController {
     @Autowired
-    private ClienteService clienteService;
-
+    private EnvioService envioService;
 
     @PostMapping("/guardar")
-    public ResponseEntity<String> guardarCliente(@RequestBody Cliente cliente) {
-        clienteService.guardar(cliente);
-        return new ResponseEntity<>("Cliente guardado", HttpStatus.CREATED);
+    public ResponseEntity<String> guardarEntrega(@RequestBody Envio envio) {
+        envioService.guardar(envio);
+        return new ResponseEntity<>("Entrega guardada con éxito", HttpStatus.CREATED);
     }
 }
